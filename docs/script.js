@@ -4,7 +4,7 @@ document.getElementById('year').textContent = `${new Date().getFullYear()}`;
 $(document).ready(function() {
     // Fetch CSRF token on page load
     $.ajax({
-        url: 'get-csrf.php',
+        url: '../get-csrf.php',
         type: 'GET',
         dataType: 'json',
         success: function(response) {

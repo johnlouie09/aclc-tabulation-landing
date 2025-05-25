@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ");
             $adminRecipient = $smtpConfig['recipient_email'] ?? 'aclc-tabulation@localhost.net'; // Updated fallback
             error_log("Admin recipient email: " . var_export($adminRecipient, true)); // Debug log
-            if (!is_string($adminRecipient) || empty($adminRecipient) || strpos($adminRecipient, '@') === false) {
+            if (!is_string($adminRecipient) || empty($adminRecipient) || !str_contains($adminRecipient, '@')) {
                 throw new Exception('Invalid admin recipient email in SMTP configuration: ' . $adminRecipient);
             }
             $adminMailer->addRecipient($adminRecipient);
