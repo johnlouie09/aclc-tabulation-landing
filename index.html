@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACLC Tabulation Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-gray-100">
+<header class="bg-blue-800 text-white py-4">
+    <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold">ACLC Tabulation Team</h1>
+        <nav class="mt-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="#home" class="hover:underline">Home</a></li>
+                <li><a href="#about" class="hover:underline">About</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="home" class="py-12">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl font-semibold mb-4">Welcome to ACLC Tabulation Team</h2>
+        <p class="text-lg">We provide efficient and accurate tabulation services for your events and competitions.</p>
+    </div>
+</section>
+
+<section id="about" class="py-12 bg-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl font-semibold mb-4">About Us</h2>
+        <p class="text-lg">The ACLC Tabulation Team specializes in delivering precise and timely results for various events. Our dedicated team ensures seamless data management and reporting.</p>
+    </div>
+</section>
+
+<section id="contact" class="py-12">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-semibold text-center mb-4">Contact Us</h2>
+        <p class="text-center mb-6">Have questions or need our services? Fill out the form below, and we'll get back to you!</p>
+        <div class="max-w-lg mx-auto">
+            <form id="contact-form" action="submit.php" method="POST">
+                <input type="hidden" name="csrf_token" id="csrf_token">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium mb-1">Name:</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium mb-1">Email:</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium mb-1">Message:</label>
+                    <textarea id="message" name="message" class="w-full p-2 border rounded h-32 resize-y" required></textarea>
+                </div>
+                <button type="submit" id="submit-btn" class="w-full bg-blue-800 text-white p-2 rounded hover:bg-blue-900">Send Message</button>
+            </form>
+            <div id="form-message" class="mt-4 text-center"></div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-200 py-4 text-center">
+    <div class="container mx-auto px-4">
+        <p>© <span id="year"></span> ACLC Tabulation Team. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
